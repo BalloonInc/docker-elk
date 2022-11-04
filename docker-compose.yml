@@ -88,6 +88,14 @@ services:
     depends_on:
       - elasticsearch
 
+# add cerebro
+  cerebro:
+    image: lmenezes/cerebro
+    ports:
+      - "9000:9000"
+    environment:
+      - CEREBRO_PORT=9000
+
 networks:
   elk:
     driver: bridge
